@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+</head>
+<body>
+
+<!--cabeçalho-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Carrinho de compras</a>
+    </div>
+    </nav>
+
+    <br>
+
+<!-- formulario para inserir os produtos -->
+
+<div class="container-fluid mt-3">
+    <div class="card bg-light mb-3" style="max-width: 30rem;">
+        <div class="card-header">Adicionar novo produto</div>
+        <div class="card-body">
+            <form id="product-form">
+                <div class="input-group col-sm-3">
+                    <span class="input-group-text"></span>
+                    <input type="text" class="form-control" id="name" placeholder="Produto">
+                </div>
+                <br>
+                <div class="input-group col-sm-3">
+                    <span class="input-group-text"></span>
+                    <input type="text" class="form-control" id="brand" placeholder="Marca"> 
+                </div>
+                <br>
+                <div class="input-group col-sm-3">
+                    <span class="input-group-text"></span>
+                    <input type="number" class="form-control" id="amount" placeholder="Quantidade" step="1">
+                </div>
+                <br>
+                <div class="input-group col-sm-3">
+                    <span class="input-group-text">R$</span>
+                    <input type="text" class="form-control" id="value" placeholder="Preço">
+                    <span class="input-group-text">,00</span>
+                </div>
+                <br>
+    
+    <!-- botoes de salvar dados e apagar-->
+    
+                <div class="d-grid gap-3">
+                    <button class="btn btn-sm btn-success" onclick="addData()" type="button">Adicionar ao Carrinho</button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteList()" type="button">Apagar Lista</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    
+        <div id="errors" style="display: none;"></div>
+    
+        <table id="addedProducts" class="table main"></table>
+    
+    <!-- lista com algins produtos disponíveis (não executa nenhuma ação ou algo do tipo)-->
+    
+    
+    <div class="card bg-light mb-3" style="max-width: 45rem;">
+        <div class="card-header">Produtos disponíveis</div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="table-active">
+                        <td>Produto</td>
+                        <td>Marca</td>
+                        <td>Miniatura</td>
+                        <td>Preço</td>
+                        <td>Avaliação do cliente</td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>Camisa de botão</td>
+                    <td>marca humilde</td>
+                    <td><img src=""></td>
+                    <td>R$ 15,00</td>
+                    <td>6,4 <i>de 10</i></td>
+                </tr>
+                <tr>
+                    <td>Camisa de botão</td>
+                    <td>marca humilde</td>
+                    <td><img src=""></td>
+                    <td>R$ 15,00</td>
+                    <td>6,4 <i>de 10</i></td>
+                </tr>
+                <tr>
+                    <td>Camisa de botão</td>
+                    <td>marca humilde</td>
+                    <td><img src=""></td>
+                    <td>R$ 15,00</td>
+                    <td>6,4 <i>de 10</i></td>
+                </tr>
+                <tr>
+                    <td>Camisa de botão</td>
+                    <td>marca humilde</td>
+                    <td><img src=""></td>
+                    <td>R$ 15,00</td>
+                    <td>6,4 <i>de 10</i></td>
+                </tr>
+                <tr>
+                    <td>Camisa de botão</td>
+                    <td>marca humilde</td>
+                    <td><img src=""></td>
+                    <td>R$ 15,00</td>
+                    <td>6,4 <i>de 10</i></td>
+                </tr>
+            </table>
+      
+        </div>
+      </div>
+
+</div>
+
+  <nav class="navbar navbar-expand-lg bg-primary disabled fixed-bottom">
+    <div class="container">
+        <h5 class="text-center text-light">Total a pagar: <span id="totalValue">R$ 0,00</span></h5>
+    </div>
+  </nav>
+  <script src="script.js"></script>
+</body>
+</html>
